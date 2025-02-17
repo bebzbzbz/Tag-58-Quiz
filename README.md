@@ -1,1 +1,1 @@
-<img src="./assets/img/Macbook-Air-localhost.png">
+<img src="./src/assets/img/Macbook-Air-localhost.png">
