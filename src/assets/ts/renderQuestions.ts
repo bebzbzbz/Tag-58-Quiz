@@ -1,9 +1,16 @@
 import { mediumQuestions } from "./data";
-// import { checkAnswer } from "./checkAnswer";
+import { checkAnswer } from "./checkAnswer";
+import { updateScore } from "./updateScore";
+import { correctAnswers } from "./checkAnswer";
 
 const contentElement = document.querySelector("#content")!
 
 function renderQuestions() {
+    const scoreElement = document.createElement("p");
+    scoreElement.classList.add("score");
+    contentElement.appendChild(scoreElement);
+    scoreElement.textContent = `0 : 10`;
+
     mediumQuestions.forEach((question) => {
         const questionCard = document.createElement("div")
         questionCard.style.backgroundImage = `url(${question.url})`
@@ -20,12 +27,10 @@ function renderQuestions() {
             choiceBtn.innerText = choice.toString()
 
             choiceBtn.addEventListener("click", () => {
-                if(choice === question.answer) {
-                    choiceBtn.classList.add("correct")
-                } else {
-                    choiceBtn.classList.add("false")
-                }
+                checkAnswer(choice, question, choiceBtn);
+                updateScore(correctAnswers, scoreElement);
             })
+
             choicesContainer.appendChild(choiceBtn)
         })
     })

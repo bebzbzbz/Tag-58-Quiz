@@ -65,7 +65,7 @@ export const mediumQuestions: QuizItem[] = [
     {
         url: 'https://cdn.playbuzz.com/cdn//f063e8fe-ad57-485e-8211-ed2ee0d9a205/1226f177-dc1a-4142-8875-bdaa177717d7.jpg',
         question: 'Which is the largest body of water?',
-        choices: ['indian Ocean', 'Pacific Ocean', 'Atlantic Ocean', 'Nile River'],
+        choices: ['Indian Ocean', 'Pacific Ocean', 'Atlantic Ocean', 'Nile River'],
         answer: 'Pacific Ocean'
     }
 ];

@@ -1,0 +1,116 @@
+@font-face {
+    font-family: "Bebas Neue";
+    src: url(../fonts/BebasNeue-Regular.ttf);
+}
+@font-face {
+    font-family: "Poppins";
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: "Poppins Bold";
+    src: url(../fonts/Poppins-Bold.ttf);
+}
+
+:root {
+    --bg: #e4af00;
+    --btnBg: #000;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 5rem 17%;
+    background-color: var(--bg);
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 6rem;
+    font-family: "Bebas Neue";
+    font-weight: normal;
+}
+
+p, button {
+    font-size: 2.2rem;
+    z-index: 5;
+}
+p {
+    font-family: "Poppins Bold";
+}
+
+.score {
+    font-family: "Poppins";
+    position: sticky;
+    top: 0;
+    padding: 1rem 0 3rem;
+    background-color: var(--bg);
+    z-index: 10;
+    width: calc(100% + 10px)
+}
+
+.question-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: 50% 30%;
+    position: relative;
+    box-shadow: 10px 10px 0 #000;
+}
+.question-card:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    opacity: 80%;
+}
+
+.choices-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+button {
+    font-family: "Poppins";
+    padding: .7rem 2rem;
+    background-color: var(--btnBg);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color .2s ease, transform .2s ease-in, opacity .5s ease;
+}
+button:hover {
+    background-color: #333;
+    transform: scale(1.08);
+}
+button.correct {
+    background-color: rgb(40, 181, 40);
+}
+button.false {
+    background-color: rgb(188, 19, 19);
+}
+button:disabled:not(.false):not(.correct) {
+    opacity: .5;
+}
